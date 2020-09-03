@@ -1,14 +1,40 @@
-{
-  "type": "mysql",
-  "host": "127.0.0.1",
-  "port": 3306,
-  "username": "test",
-  "password": "test",
-  "database": "testdb",
-  "entities": ["src/**/entity/*{.ts,.js}"],
-  "migrationsTableName": "migration",
-  "migrations": ["migration/local/*{.ts,.js}"],
-  "cli": {
+[
+  {
+    "name": "mysql",
+    "type": "mysql",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "username": "test",
+    "password": "test",
+    "database": "testdb",
+    "entities": [
+      "src/**/entity/*{.ts,.js}"
+    ],
+    "migrationsTableName": "migration",
+    "migrations": [
+      "migration/mysql/*{.ts,.js}"
+    ],
+    "cli": {
       "migrationsDir": "migration"
+    }
+  },
+  {
+    "name": "postgres",
+    "type": "postgres",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "username": "test",
+    "password": "test",
+    "database": "testdb",
+    "entities": [
+      "src/**/entity/*{.ts,.js}"
+    ],
+    "migrationsTableName": "migration",
+    "migrations": [
+      "migration/postgres/*{.ts,.js}"
+    ],
+    "cli": {
+      "migrationsDir": "migration"
+    }
   }
-}
+]

@@ -1,10 +1,15 @@
-import {getRepository} from "typeorm";
+import {getRepository, getConnection} from "typeorm";
 import {NextFunction, Request, Response} from "express";
 import {User} from "../entity/User";
 
 export class UserController {
 
-    private userRepository = getRepository(User);
+    private mysqlConnection;
+    private userRepository;
+    constructor() {
+      this.mysqlConnection = getConnection('mysql')
+      this.userRepository = this.mysqlConnection.getRepository(User);
+    }
 
     async all(request: Request, response: Response, next: NextFunction) {
         return this.userRepository.find();
