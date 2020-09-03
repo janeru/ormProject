@@ -1,0 +1,11 @@
+version: '3'
+services:
+  couchdb:
+    container_name: couchdb
+    image: hyperledger/fabric-couchdb:0.4.15
+    restart: always
+    environment:
+      - COUCHDB_USER=test
+      - COUCHDB_PASSWORD=test
+    ports:
+      - "5984:5984"

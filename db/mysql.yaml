@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql/mysql-server:5.7
+    restart: always
+    environment:
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=testdb
+    ports:
+      - 3306:3306
+      - 33060:33060

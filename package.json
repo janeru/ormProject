@@ -8,13 +8,16 @@
       "typescript": "4.0.2"
    },
    "dependencies": {
-      "typeorm": "0.2.25",
-      "reflect-metadata": "^0.1.10",
-      "mysql": "^2.18.1",
+      "body-parser": "^1.19.0",
       "express": "^4.15.4",
-      "body-parser": "^1.19.0"
+      "mysql": "^2.18.1",
+      "nodemon": "^2.0.4",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.25"
    },
    "scripts": {
-      "start": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node src/index.ts"
+      "start": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node src/index.ts",
+      "m:g": "ts-node ./node_modules/typeorm/cli.js migration:generate",
+      "m:r": "ts-node ./node_modules/typeorm/cli.js migration:run"
    }
 }
