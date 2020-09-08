@@ -1,0 +1,59 @@
+[
+  {
+    "name": "mysql",
+    "type": "mysql",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "username": "test",
+    "password": "test",
+    "database": "testdb",
+    "entities": [
+      "src/**/entity/*{.ts,.js}"
+    ],
+    "migrationsTableName": "migration",
+    "migrations": [
+      "migration/mysql/*{.ts,.js}"
+    ],
+    "cli": {
+      "migrationsDir": "migration"
+    }
+  },
+  {
+    "name": "postgres",
+    "type": "postgres",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "username": "test",
+    "password": "test",
+    "database": "testdb",
+    "entities": [
+      "src/**/entity/*{.ts,.js}"
+    ],
+    "migrationsTableName": "migration",
+    "migrations": [
+      "migration/postgres/*{.ts,.js}"
+    ],
+    "cli": {
+      "migrationsDir": "migration"
+    }
+  },
+  {
+    "name": "mongodb",
+    "type": "mongodb",
+    "host": "127.0.0.1",
+    "url": "mongodb://test:test@127.0.0.1:27017/admin?retryWrites=true&w=majority",
+    "useNewUrlParser": true,
+    "port": 27017,
+    "database": "admin",
+    "entities": [
+      "src/**/entity/*{.ts,.js}"
+    ],
+    "migrationsTableName": "migration",
+    "migrations": [
+      "migration/mongodb/*{.ts,.js}"
+    ],
+    "cli": {
+      "migrationsDir": "migration/mongodb"
+    }
+  }
+]
