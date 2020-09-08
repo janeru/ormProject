@@ -10,6 +10,7 @@
    "dependencies": {
       "body-parser": "^1.19.0",
       "express": "^4.15.4",
+      "mongodb": "^3.6.1",
       "mysql": "^2.18.1",
       "nodemon": "^2.0.4",
       "pg": "^8.3.3",
@@ -19,6 +20,7 @@
    "scripts": {
       "start": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node src/index.ts",
       "m:g": "ts-node ./node_modules/typeorm/cli.js migration:generate",
-      "m:r": "ts-node ./node_modules/typeorm/cli.js migration:run"
+      "m:r": "ts-node ./node_modules/typeorm/cli.js migration:run",
+      "m:re": "ts-node ./node_modules/typeorm/cli.js migration:revert"
    }
 }

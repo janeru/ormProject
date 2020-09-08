@@ -36,5 +36,24 @@
     "cli": {
       "migrationsDir": "migration"
     }
+  },
+  {
+    "name": "mongodb",
+    "type": "mongodb",
+    "host": "127.0.0.1",
+    "url": "mongodb://test:test@127.0.0.1:27017/admin?retryWrites=true&w=majority",
+    "useNewUrlParser": true,
+    "port": 27017,
+    "database": "admin",
+    "entities": [
+      "src/**/entity/*{.ts,.js}"
+    ],
+    "migrationsTableName": "migration",
+    "migrations": [
+      "migration/mongodb/*{.ts,.js}"
+    ],
+    "cli": {
+      "migrationsDir": "migration/mongodb"
+    }
   }
 ]

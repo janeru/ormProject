@@ -7,7 +7,7 @@ export class UserController {
     private mysqlConnection;
     private userRepository;
     constructor() {
-      this.mysqlConnection = getConnection('mysql')
+      this.mysqlConnection = getConnection('postgres')
       this.userRepository = this.mysqlConnection.getRepository(User);
     }
 
